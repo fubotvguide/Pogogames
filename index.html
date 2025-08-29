@@ -16,7 +16,7 @@
     a { color: #0b78e3; text-decoration: none; }
     a:hover { text-decoration: underline; }
     /* Container */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem 3rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem 3rem; }
     /* Header with fixed nav */
     header { position: fixed; top: 0; left: 0; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 9999; display: flex; justify-content: center; }
     header h1 { font-size: 1.5rem; }
@@ -225,30 +225,74 @@
       100% { opacity: 1; transform: translateY(0); }
     }
     
-    
-    
-    
-    /* Content Styling */
-        .article-content {
-            font-size: 1em;
-            line-height: 1.6;
-            color: #555;
-            max-width: 800px;
-            margin: 30px auto;
-        }
+     /* Service Section */
+    .service-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
 
-        .article-content p {
-            margin-bottom: 15px;
-        }
+    /* Individual Service Cards */
+    .service-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    /* Card Hover Effect */
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Card Titles */
+    .service-card h3 {
+      font-size: 1.4rem;
+      color: #007bff;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    /* Card Descriptions */
+    .service-card p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .service-section {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .service-section {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Pogo Games</h1>
     <nav>
-      <a href="https://www.pogo.com/"><button onclick="scrollToSection('login')">Login</button></a>
-      <a href="https://help.pogo.com/"><button onclick="scrollToSection('support')">Support</button></a>
-      <a href="https://www.pogo.com/account/create"><button onclick="scrollToSection('signup')">Sign Up</button></a>
+      <a href="https://pogoclubgames.net"><button onclick="scrollToSection('login')">Login</button></a>
+      <a href="https://getchatsupport.live/"><button onclick="scrollToSection('support')">Support</button></a>
+      <a href="https://tek.chat/sign-up.html"><button onclick="scrollToSection('signup')">Sign Up</button></a>
       
       <a href="https://www.pogo.com/"><button onclick="scrollToSection('home')">Download</button></a>
       <a href="https://www.pogo.com/"><button onclick="scrollToSection('home')">Install</button></a>
@@ -335,12 +379,12 @@
       <div class="download-card">
         <h3>Download Pogo Games for Windows</h3>
         <p>Get the Pogo Games app for Windows and enjoy fast and easy access to your account. Play your favorite games directly from your desktop.</p>
-        <a href="#" class="button">Download Now</a>
+        <a href="https://i-downloadsoftwares.com/" class="button">Download Now</a>
       </div>
       <div class="download-card">
         <h3>Download Pogo Games for macOS</h3>
         <p>Experience seamless gameplay with the Pogo Games app on your Mac. Download and sign in to start playing right away!</p>
-        <a href="#" class="button">Download Now</a>
+        <a href="https://i-downloadsoftwares.com/" class="button">Download Now</a>
       </div>
     </div>
   </div>
@@ -352,12 +396,51 @@
       <div class="install-card">
         <h3>Install Pogo Games for Windows</h3>
         <p>Follow this guide to install Pogo Games on your Windows computer and start enjoying a seamless gaming experience.</p>
-        <a href="#" class="button">Install Now</a>
+        <a href="https://softwareinstaller.net/" class="button">Install Now</a>
       </div>
       <div class="install-card">
         <h3>Install Pogo Games for macOS</h3>
         <p>Easy installation guide for macOS users. Download the Pogo Games app for your Mac and enjoy your favorite games with smooth performance.</p>
-        <a href="#" class="button">Install Now</a>
+        <a href="https://softwareinstaller.net/" class="button">Install Now</a>
+      </div>
+    </div>
+    
+    <!-- Service Section with 6 Services -->
+    <div class="service-section">
+      <!-- Service Card 1 -->
+      <div class="service-card">
+        <h3>Login to Pogo Account</h3>
+        <p>Quickly log in to your Pogo Games account with your registered email and password. Start playing your favorite games.</p>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="service-card">
+        <h3>Password Recovery</h3>
+        <p>If you've forgotten your password, use our password recovery service to reset it and regain access to your Pogo account.</p>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="service-card">
+        <h3>Secure Your Account</h3>
+        <p>Enhance your account security by enabling two-factor authentication and updating your login details regularly.</p>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="service-card">
+        <h3>Account Recovery</h3>
+        <p>If you're unable to log in, our account recovery process helps you regain access with a few simple steps.</p>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="service-card">
+        <h3>Support Assistance</h3>
+        <p>If you're facing issues logging into your Pogo Games account, our support team is ready to assist you anytime.</p>
+      </div>
+
+      <!-- Service Card 6 -->
+      <div class="service-card">
+        <h3>Sign Up for New Account</h3>
+        <p>Join the Pogo community by creating a new account. Enjoy a variety of games and fun features with your new account.</p>
       </div>
     </div>
 
